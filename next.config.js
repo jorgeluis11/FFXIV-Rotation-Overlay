@@ -1,12 +1,6 @@
 const withPlugins = require('next-compose-plugins');
 // const optimizedImages = require('next-optimized-images');
 
-module.exports = {
-  reactStrictMode: true,
-  assetPrefix: '/FFXIV-Rotation-Overlay/',
-  basePath: '/FFXIV-Rotation-Overlay',
-}
-
 module.exports = withPlugins([
   // [optimizedImages, {
   //   mozjpeg: {
