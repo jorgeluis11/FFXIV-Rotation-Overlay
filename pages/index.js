@@ -292,9 +292,8 @@ const Home = () => {
       <div className={styles.main}>
         {rotation.map((item, index) => {
           return (
-            <div className={`${index === count ? 'image-size animate__animated animate__pulse animate__infinite animate__slower  ' + styles.active : ''} ${styles.action} ${item.fail ? styles.fail : ''} ${item.success ? styles.success : ''}`}>
+            <div  key={index} className={`${index === count ? 'image-size animate__animated animate__pulse animate__infinite animate__slower  ' + styles.active : ''} ${styles.action} ${item.fail ? styles.fail : ''} ${item.success ? styles.success : ''}`}>
               <Image
-                key={index}
                 myLoader={myLoader}
                 width={50}
                 height={50}
