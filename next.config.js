@@ -15,6 +15,9 @@ module.exports = withPlugins([
   }],
   
   {
+    images: {
+      domains: ['xivapi.com'],
+    },
     basePath: '/FFXIV-Rotation-Overlay',
     assetPrefix: '/FFXIV-Rotation-Overlay/',
     "presets": ["next/babel"]

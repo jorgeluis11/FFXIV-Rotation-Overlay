@@ -24,6 +24,12 @@ const Home = () => {
     document.removeEventListener("onLogLine", e => { })
   }
 
+  const myLoader = ({ url, src, width, quality }) => {
+    // return `${src}?w=${width}&q=${quality || 75}`
+    // return `${src}?w=${width}`
+    return `${src}`
+  }
+
   useEffect(() => {
     document.addEventListener("onOverlayStateUpdate", (e) => {
       // if (!e.detail.isLocked) {
@@ -57,16 +63,16 @@ const Home = () => {
           rotationCopy[count].success = true;
         else
           rotationCopy[count].fail = true;
-        count = count+1
+        count = count + 1
         // setLogList([...logList, data])
 
-        setRotation([ ...rotationCopy ])
+        setRotation([...rotationCopy])
         // setLogList([...logList])
 
         console.log(logList)
-      }else if (detail[0] === '00' && detail[4].indexOf("You change to") !== -1) {
+      } else if (detail[0] === '00' && detail[4].indexOf("You change to") !== -1) {
         console.log(detail)
-        
+
         switch (detail[4]) {
           case 'You change to paladin.':
             setLogList([])
@@ -79,28 +85,28 @@ const Home = () => {
             setLogList([])
             setRotation(SAM)
             break;
-        
+
           default:
             break;
         }
-        
+
       }
     }
-  
+
     document.addEventListener("onLogLine", listener)
 
     return () => {
       console.log("Remove listener")
       document.removeEventListener("onLogLine", listener)
     }
-  
+
 
     // document.removeEventListener("onLogLine", e => { })
     // addNewEventListener()
   }, [rotation])
 
   const addNewEventListener = () => {
- 
+
   }
 
 
@@ -282,20 +288,23 @@ const Home = () => {
 
   return (
     <div className={styles.container}>
-        <button onClick={resetRotation}> Reset Rotation </button>
-        <div className={styles.main}>
-          {rotation.map((item, index) => {
-            return (
+      <button onClick={resetRotation}> Reset Rotation </button>
+      <div className={styles.main}>
+        {rotation.map((item, index) => {
+          return (
+            <div className={`${index === count ? 'image-size animate__animated animate__pulse animate__infinite animate__slower  ' + styles.active : ''} ${styles.action} ${item.fail ? styles.fail : ''} ${item.success ? styles.success : ''}`}>
               <Image
                 key={index}
-                className={`${index===count?'animate__animated animate__pulse animate__infinite animate__slower ' + styles.active:''} ${styles.action} ${item.fail ? styles.fail : ''} ${item.success ? styles.success : ''}`}
-                style={{ 'width': '50px', 'height': '50px', 'margin-left': '10px', 'margin-top': '10px' }}
+                myLoader={myLoader}
+                width={50}
+                height={50}
                 src={`https://xivapi.com/${item.Icon}?private_key=01b8717a652b4c4cb40e9dd7fac3efe644552ce827ea4c94b3b68db663d620e0`}
                 alt={item.Name || ""}
-              />)
-          })}
-        </div>
-        {/* aaa
+              />
+            </div>
+            )})}
+      </div>
+      {/* aaa
         <App></App>
         aa 
         <div id="encounter">
@@ -304,7 +313,7 @@ const Home = () => {
 
         <table id="combatantTable">
         </table>*/}
-    
+
 
       {/* <footer className={styles.footer}>
         <a

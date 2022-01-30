@@ -10,10 +10,11 @@
   overflow-y: auto;
   border-radius: 10px!important;
   background-color: #121212;
-  height: 200vh!important;
+  /* height: 200vh!important; */
   flex-direction: row;
   flex-wrap: wrap;
   border-image-outset: 40px;
+  display: flex;
 }
 
 .action {

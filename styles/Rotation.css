@@ -30,3 +30,7 @@
 .rotation-button.expanded:after {
 	content: "\25B2";
 }
+
+.image-size{
+	float:left!important;
+}
