@@ -1,5 +1,5 @@
 const withPlugins = require('next-compose-plugins');
-const optimizedImages = require('next-optimized-images');
+// const optimizedImages = require('next-optimized-images');
 
 module.exports = {
   reactStrictMode: true,
@@ -8,17 +8,17 @@ module.exports = {
 }
 
 module.exports = withPlugins([
-  [optimizedImages, {
-    mozjpeg: {
-      quality: 80,
-    },
-    pngquant: {
-      speed: 3,
-      strip: true,
-      verbose: true,
-    },
-    imagesPublicPath: '/FFXIV-Rotation-Overlay/_next/static/images/',
-  }],
+  // [optimizedImages, {
+  //   mozjpeg: {
+  //     quality: 80,
+  //   },
+  //   pngquant: {
+  //     speed: 3,
+  //     strip: true,
+  //     verbose: true,
+  //   },
+  //   // imagesPublicPath: '/FFXIV-Rotation-Overlay/.next/static/images/',
+  // }],
   {
     basePath: '/FFXIV-Rotation-Overlay',
     assetPrefix: '/FFXIV-Rotation-Overlay/',

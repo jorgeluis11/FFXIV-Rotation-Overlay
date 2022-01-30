@@ -58,7 +58,7 @@ const Home = () => {
         else
           rotationCopy[count].fail = true;
         count = count+1
-        setLogList([...logList, data])
+        // setLogList([...logList, data])
 
         setRotation([ ...rotationCopy ])
         // setLogList([...logList])
