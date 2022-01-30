@@ -1,4 +1,4 @@
-export default [
+const rotation = [
     {
         "Icon": "/i/003000/003167.png",
         "Name": "Meikyo Shisui",
@@ -1478,3 +1478,6 @@ export default [
 //         "Name": "Yukikaze"
 //     }
 // ]
+
+
+export default rotation

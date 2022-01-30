@@ -287,6 +287,7 @@ const Home = () => {
           {rotation.map((item, index) => {
             return (
               <img
+                key={index}
                 className={`${index===count?'animate__animated animate__pulse animate__infinite animate__slower ' + styles.active:''} ${styles.action} ${item.fail ? styles.fail : ''} ${item.success ? styles.success : ''}`}
                 style={{ 'width': '50px', 'height': '50px', 'margin-left': '10px', 'margin-top': '10px' }}
                 src={`https://xivapi.com/${item.Icon}?private_key=01b8717a652b4c4cb40e9dd7fac3efe644552ce827ea4c94b3b68db663d620e0`}

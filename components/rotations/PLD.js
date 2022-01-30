@@ -1,4 +1,4 @@
-export default [
+const rotation =  [
   {
       "Icon": "/i/002000/002514.png",
       "Name": "Holy Spirit"
@@ -224,3 +224,5 @@ export default [
         "Name": "Blade of Valor"
     }
 ]
+
+export default rotation
