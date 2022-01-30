@@ -17,11 +17,11 @@ module.exports = withPlugins([
       strip: true,
       verbose: true,
     },
-    imagesPublicPath: '/wallisconsultancy/_next/static/images/',
+    imagesPublicPath: '/FFXIV-Rotation-Overlay/_next/static/images/',
   }],
   {
-    basePath: '/wallisconsultancy',
-    assetPrefix: '/wallisconsultancy/',
-    env,
+    basePath: '/FFXIV-Rotation-Overlay',
+    assetPrefix: '/FFXIV-Rotation-Overlay/',
+    // env,
   },
 ]);
